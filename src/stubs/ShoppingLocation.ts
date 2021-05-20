@@ -1,0 +1,16 @@
+export const shoppingLocations: string[] = [
+  "IKEA Malaysia",
+  "IPC",
+  "Toppen",
+  "MyTOWN",
+  "Gamuda Walk",
+  "Subang Parade",
+  "KL",
+  "Kepong",
+  "TTDI",
+  "Petaling Jaya",
+  "Bangsar",
+  "Mont Kiara",
+  "Cheras",
+  "Puchong",
+];
