@@ -1,38 +1,42 @@
-import * as React from "react"
 import {
-  ChakraProvider,
   Box,
-  Text,
-  Link,
-  VStack,
-  Code,
+  ChakraProvider,
+  extendTheme,
   Grid,
-  theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+  Image,
+  Text,
+} from "@chakra-ui/react";
+import * as React from "react";
+import { ShortcutsBar } from "./ShortcutBar";
+import { jobIcons } from "./stubs/Jobs";
 
-export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
-    </Box>
-  </ChakraProvider>
-)
+const theme = extendTheme({
+  colors: {
+    brand: "rgb(0, 180, 173)",
+  },
+});
+
+export const App = () => {
+  return (
+    <ChakraProvider theme={theme}>
+      <Box textAlign="center" p={3} pb={0}>
+        <ShortcutsBar />
+        <Grid
+          gridTemplateColumns="repeat(4, 1fr)"
+          gridAutoRows="auto"
+          padding={4}
+          gridGap={4}
+        >
+          {jobIcons.map((job) => {
+            return (
+              <Box as="button" flexDirection="column">
+                <Image width="100%" src={job.imageUrl} alt={job.name} />
+                <Text fontSize="small">{job.name}</Text>
+              </Box>
+            );
+          })}
+        </Grid>
+      </Box>
+    </ChakraProvider>
+  );
+};
