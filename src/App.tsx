@@ -5,6 +5,7 @@ import {
   extendTheme,
   Flex,
   Grid,
+  Heading,
   Image,
   Link,
   Text,
@@ -79,9 +80,9 @@ export const App = () => {
           <Flex mb={2} justifyContent="space-between" alignItems="center">
             <Flex alignItems="center">
               <ShoppingIcon w={7} />
-              <Text ml={1} fontWeight="semibold" fontSize="lg">
+              <Heading as="h2" ml={1} fontWeight="semibold" fontSize="lg">
                 Shop with GoGet
-              </Text>
+              </Heading>
             </Flex>
             <Link mr={2} fontWeight="normal" color="brand">
               SEE ALL
@@ -91,6 +92,7 @@ export const App = () => {
           <NoScroll mb={2} overflowX="scroll">
             {shoppingLocations.map((s, i) => (
               <Badge
+                as="button"
                 key={`${i} - ${s}`}
                 mr={4}
                 p={2}
