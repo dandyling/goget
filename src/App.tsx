@@ -14,7 +14,7 @@ import styled from "@emotion/styled";
 import * as React from "react";
 import { ReactElement } from "react";
 import Slider from "react-slick";
-import { IconContainer, ShortcutsBar } from "./ShortcutBar";
+import { IconContainer, ShortcutsBar } from "./ShortcutsBar";
 import { carouselImages } from "./stubs/Carousel";
 import { jobIcons } from "./stubs/Jobs";
 import { shoppingLocations } from "./stubs/ShoppingLocation";

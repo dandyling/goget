@@ -6,17 +6,6 @@ export const ShortcutsBar = () => {
   return <TabButtons buttons={tabButtons} />;
 };
 
-const FavouriteIcon = () => {
-  return (
-    <IconContainer>
-      <Image
-        width="100%"
-        src="https://app.goget.my/static/media/FavouriteIcon.ccb09da0.svg"
-      />
-    </IconContainer>
-  );
-};
-
 type IconContainerProps = {
   children: ReactElement;
 };
@@ -27,6 +16,17 @@ export const IconContainer = (props: IconContainerProps) => {
     <Box w={5} fill="brand" {...rest}>
       {children}
     </Box>
+  );
+};
+
+const FavouriteIcon = () => {
+  return (
+    <IconContainer>
+      <Image
+        width="100%"
+        src="https://app.goget.my/static/media/FavouriteIcon.ccb09da0.svg"
+      />
+    </IconContainer>
   );
 };
 
