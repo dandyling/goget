@@ -1,4 +1,5 @@
 import {
+  Badge,
   Box,
   ChakraProvider,
   extendTheme,
@@ -10,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import * as React from "react";
+import { ReactElement } from "react";
 import Slider from "react-slick";
 import { IconContainer, ShortcutsBar } from "./ShortcutBar";
 import { carouselImages } from "./stubs/Carousel";
@@ -87,19 +89,18 @@ export const App = () => {
           </Flex>
           <Text mb={4}>Buy items with personal shoppers.</Text>
           <NoScroll mb={2} overflowX="scroll">
-            {shoppingLocations.map((s) => (
-              <Box
-                whiteSpace="nowrap"
-                backgroundColor="gray.100"
-                color="brand"
-                borderRadius="lg"
-                fontSize="small"
-                p={2}
+            {shoppingLocations.map((s, i) => (
+              <Badge
+                key={`${i} - ${s}`}
                 mr={4}
+                p={2}
+                textTransform="none"
+                color="brand"
                 fontWeight="normal"
+                borderRadius="lg"
               >
                 {s}
-              </Box>
+              </Badge>
             ))}
           </NoScroll>
         </Box>
@@ -111,6 +112,12 @@ export const App = () => {
 export const Carousel = styled(Slider)`
   .slick-dots {
     margin-bottom: 1.5rem;
+  }
+`;
+
+const NoScroll = styled(Flex)`
+  ::-webkit-scrollbar {
+    display: none;
   }
 `;
 
@@ -128,8 +135,4 @@ const ShoppingIcon = (props: any) => (
   </IconContainer>
 );
 
-const NoScroll = styled(Flex)`
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
+export type Children = { children?: ReactElement };

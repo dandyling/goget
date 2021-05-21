@@ -12,10 +12,8 @@ export const TabButtons = (props: TabButtonsProps) => {
     <ButtonGroup width="100%" isAttached>
       {buttons.map((t, i) => (
         <TabButton
-          borderRadius="lg"
-          shadow="md"
-          variant="outline"
           key={`${i} - ${t.name}`}
+          variant="outline"
           width="100%"
           leftIcon={t.element}
         >
@@ -30,6 +28,8 @@ export const TabButton = styled(Button)`
   font-size: ${theme.fontSizes.xs};
   background-color: ${theme.colors.white};
   font-weight: ${theme.fontWeights.normal};
+  box-shadow: ${theme.shadows.md};
+  border-radius: ${theme.radii.lg};
 `;
 
 export type ElementDetail = {
