@@ -1,4 +1,4 @@
-export const shoppingLocations: string[] = [
+export const shoppingTags: string[] = [
   "IKEA Malaysia",
   "IPC",
   "Toppen",

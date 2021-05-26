@@ -1,6 +1,6 @@
 import { ImageDetail } from "./Jobs";
 
-export const carouselImages: ImageDetail[] = [
+export const posters: ImageDetail[] = [
   {
     imageUrl: "https://app.goget.my/ReferAndEarnMobile.png",
     name: "Refer and Earn",

@@ -15,9 +15,9 @@ import * as React from "react";
 import { ReactElement } from "react";
 import Slider from "react-slick";
 import { IconContainer, ShortcutsBar } from "./ShortcutsBar";
-import { carouselImages } from "./stubs/Carousel";
+import { posters } from "./stubs/Posters";
 import { jobIcons } from "./stubs/Jobs";
-import { shoppingLocations } from "./stubs/ShoppingLocation";
+import { shoppingTags } from "./stubs/ShoppingTags";
 
 const theme = extendTheme({
   colors: {
@@ -40,7 +40,7 @@ export const App = () => {
             slidesToShow={1}
             slidesToScroll={1}
           >
-            {carouselImages.map((image, i) => (
+            {posters.map((image, i) => (
               <Image
                 key={`${i} - ${image.name}`}
                 src={image.imageUrl}
@@ -90,7 +90,7 @@ export const App = () => {
           </Flex>
           <Text mb={4}>Buy items with personal shoppers.</Text>
           <NoScroll mb={2} overflowX="scroll">
-            {shoppingLocations.map((s, i) => (
+            {shoppingTags.map((s, i) => (
               <Badge
                 as="button"
                 key={`${i} - ${s}`}
