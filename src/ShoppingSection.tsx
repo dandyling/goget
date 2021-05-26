@@ -51,6 +51,7 @@ export const ShoppingSection = () => {
             minWidth={`calc(100% + 2rem)`}
             key={`${i} - ${l.name}`}
             mr={4}
+            textAlign="left"
           >
             <Flex flex={2}>
               <Image src={l.imageUrl} alt={l.name} />
